@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Mayurgirdhar_web_project_1710831685468-pr-trigger-input-set
+  identifier: Build_Mayurgirdhar_web_project_1710831685468prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Mayurgirdhar_web_project_1710831685468
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
