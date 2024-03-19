@@ -19,15 +19,20 @@ pipeline:
             steps:
               - step:
                   identifier: echo
-                  name: echo
+                  name: Build-stag
                   spec:
-                    command: echo hello world
+                    shell: Sh
+                    command: |
+                      echo hello world
+                      echo build is in progress
+                      apt-get update && apt-get upgrade -y 
                   timeout: ""
                   type: Run
+                  description: test build stage
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Docker
+            spec: {}
         type: CI
