@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Mayurgirdhar_web_project_1710831685468-push-trigger-input-set
+  identifier: Build_Mayurgirdhar_web_project_1710831685468pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Mayurgirdhar_web_project_1710831685468
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
