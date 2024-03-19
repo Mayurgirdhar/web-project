@@ -25,7 +25,8 @@ pipeline:
                     command: |
                       echo hello world
                       echo build is in progress
-                      apt-get update && apt-get upgrade -y 
+                      pwd 
+                      ls 
                   timeout: ""
                   type: Run
                   description: test build stage
@@ -36,3 +37,4 @@ pipeline:
             type: Docker
             spec: {}
         type: CI
+        description: ""
