@@ -1,0 +1,39 @@
+pipeline:
+  name: TEST-p1
+  identifier: TESTp1
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: Gitconnector
+        repoName: web-project
+        build: <+input>
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: build-script
+                  identifier: buildscript
+                  spec:
+                    connectorRef: account.harnessImage
+                    image: nginx
+                    shell: Bash
+                    command: |
+                      ls 
+                      pwd
